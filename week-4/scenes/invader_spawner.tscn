@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cero3k83bmpdp"]
+
+[ext_resource type="Script" uid="uid://in7tgti80jmw" path="res://scripts/invader_spawner.gd" id="1_6fcix"]
+[ext_resource type="PackedScene" uid="uid://bvotq1ghmtecf" path="res://scenes/invader.tscn" id="2_41qcn"]
+[ext_resource type="PackedScene" uid="uid://cuwvhafvfo323" path="res://scenes/shot.tscn" id="3_oktfs"]
+
+[node name="InvaderSpawner" type="Node2D" unique_id=1471978549]
+position = Vector2(30, 47)
+script = ExtResource("1_6fcix")
+invader_scene = ExtResource("2_41qcn")
+shot_scene = ExtResource("3_oktfs")
+
+[node name="MovementTimer" type="Timer" parent="." unique_id=428891885]
+wait_time = 0.2
+autostart = true
+
+[node name="ShotTimer" type="Timer" parent="." unique_id=575355527]
+wait_time = 2.5
+autostart = true
+
+[connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
