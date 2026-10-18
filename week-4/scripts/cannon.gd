@@ -22,10 +22,20 @@ func _process(delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size)
 
 func _on_area_entered(area: Area2D) -> void:
-	print("you are hit")
+	if area.collision_layer == 1:
+		print("You are hit!")
+		Global.hp -= 1
+		if Global.hp <= 0:
+			Global.hp = 0
+			Global.gameOn = false
+		print("HP: ", Global.hp)
+	else:
+		if Global.item_type == 1:
+			get_tree().root.get_node("Main").fix_shield(position.x)
+		elif Global.item_type == 2:
+			print("Shoot boosted")
+			get_tree().root.get_node("Main").boost_shoot()
+		elif Global.item_type == 3:
+			print("HP gained")
+			get_tree().root.get_node("Main").hp_get()
 	area.queue_free()
-	Global.hp -= 1
-	print(Global.hp)
-	if Global.hp == 0:
-		Global.hp = 0
-		Global.gameOn = false

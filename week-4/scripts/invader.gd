@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_area_entered(area: Area2D) -> void:
-	print("hit")
+	print("Hit Invaders")
 	# remove laser node & remove invader node***
 	Global.number_of_invaders -= 1
 	area.queue_free()

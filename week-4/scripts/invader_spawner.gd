@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func spawn_invaders():
 	Global.number_of_invaders = rows*columns
-	print("spawn")
+	print("Invaders Spawned")
 	for r in rows:
 		for c in columns:
 			var invader = invader_scene.instantiate()

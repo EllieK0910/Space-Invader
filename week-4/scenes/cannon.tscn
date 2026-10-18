@@ -10,6 +10,7 @@ size = Vector2(32, 17)
 
 [node name="Cannon" type="Area2D" unique_id=8977993]
 position = Vector2(574, 602)
+collision_mask = 9
 script = ExtResource("1_23j6s")
 metadata/_edit_group_ = true
 

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cuwvhafvfo323"]
 
 [ext_resource type="Script" uid="uid://wk3nalnrn0di" path="res://scripts/shot.gd" id="1_3ldfn"]
-[ext_resource type="Texture2D" uid="uid://rr3ry3j0v8fp" path="res://assets/icon.svg" id="2_f4qg3"]
+[ext_resource type="Texture2D" uid="uid://bh46xwrfl8s07" path="res://assets/laserBullet.png" id="2_cupcd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocgbj"]
-size = Vector2(126, 126)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1jfv"]
+radius = 41.672363
+height = 116.68335
 
 [node name="Shot" type="Area2D" unique_id=1137506159]
 position = Vector2(532, 185)
@@ -13,9 +14,11 @@ script = ExtResource("1_3ldfn")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1702072067]
-texture = ExtResource("2_f4qg3")
+position = Vector2(0.00018692017, 6.1035156e-05)
+scale = Vector2(2.2060645, 2.2060645)
+texture = ExtResource("2_cupcd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=524845070]
-shape = SubResource("RectangleShape2D_ocgbj")
+shape = SubResource("CapsuleShape2D_k1jfv")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=478734441]

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cero3k83bmpdp" path="res://scenes/invader_spawner.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dx4s122bn48le" path="res://scenes/laser_catcher.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://st0d1fq7k8nf" path="res://scenes/shield.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cmeqfgkveg8tl" path="res://scenes/item_dropper.tscn" id="5_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbb06"]
 size = Vector2(13, 648)
@@ -14,6 +15,9 @@ size = Vector2(1152, 52)
 
 [node name="Main" type="Node2D" unique_id=125790002]
 script = ExtResource("1_1bvp3")
+
+[node name="laser_timer" type="Timer" parent="." unique_id=641375088]
+wait_time = 0.3
 
 [node name="Cannon" parent="." unique_id=8977993 instance=ExtResource("1_h2yge")]
 position = Vector2(578, 613)
@@ -61,6 +65,13 @@ position = Vector2(649, 529)
 [node name="Shield4" parent="." unique_id=1407308232 instance=ExtResource("5_tbgi4")]
 position = Vector2(899, 529)
 
+[node name="item_dropper" parent="." unique_id=21757277 instance=ExtResource("5_tefeu")]
+
+[node name="boost_shooting_timer" type="Timer" parent="." unique_id=1792867620]
+wait_time = 5.0
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
 [connection signal="area_entered" from="RightWall" to="InvaderSpawner" method="_on_right_wall_area_entered"]
 [connection signal="area_entered" from="BottomWall" to="." method="_on_bottom_wall_area_entered"]
+[connection signal="tree_exiting" from="Shield" to="." method="_on_shield_tree_exiting"]
