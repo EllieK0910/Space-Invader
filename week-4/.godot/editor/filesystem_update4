@@ -1,0 +1,14 @@
+res://scenes/item_dropper.tscn
+res://global.gd
+res://scenes/shot.tscn
+res://cannon.gd
+res://scenes/cannon.tscn
+res://main.gd
+res://scripts/heart.gd
+res://invader.gd
+res://scenes/heart.tscn
+res://scenes/invader_spawner.tscn
+res://invader_spawner.gd
+res://scripts/shield.gd
+res://scenes/main.tscn
+res://scenes/shield.tscn
