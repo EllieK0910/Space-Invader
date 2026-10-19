@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cero3k83bmpdp"]
 
-[ext_resource type="Script" uid="uid://in7tgti80jmw" path="res://scripts/invader_spawner.gd" id="1_6fcix"]
-[ext_resource type="PackedScene" uid="uid://bvotq1ghmtecf" path="res://scenes/invader.tscn" id="2_41qcn"]
-[ext_resource type="PackedScene" uid="uid://cuwvhafvfo323" path="res://scenes/shot.tscn" id="3_oktfs"]
+[ext_resource type="Script" uid="uid://in7tgti80jmw" path="res://invader_spawner.gd" id="1_6fcix"]
+[ext_resource type="PackedScene" uid="uid://bvotq1ghmtecf" path="res://invader.tscn" id="2_41qcn"]
+[ext_resource type="PackedScene" uid="uid://cuwvhafvfo323" path="res://shot.tscn" id="3_oktfs"]
 
 [node name="InvaderSpawner" type="Node2D" unique_id=1471978549]
 position = Vector2(30, 47)

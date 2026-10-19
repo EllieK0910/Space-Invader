@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @export var invader_scene: PackedScene
 @export var shot_scene: PackedScene
 @export var horizontal = 48 #spacing between invaders

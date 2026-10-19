@@ -17,4 +17,4 @@ func _on_area_entered(area: Area2D) -> void:
 	queue_free()
 	if Global.number_of_invaders == 0:
 		print("All invaders dies")
-		get_tree().reload_current_scene() #restart the game
+		Global.gameOver()

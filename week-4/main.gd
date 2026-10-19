@@ -9,5 +9,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_bottom_wall_area_entered(area: Area2D) -> void:
-	print("Game Over!!!")
-	get_tree().reload_current_scene()
+	Global.gameOver()
+	
