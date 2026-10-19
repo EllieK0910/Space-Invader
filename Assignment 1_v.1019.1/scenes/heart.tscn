@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b86msx5cg2luw"]
+
+[ext_resource type="Texture2D" uid="uid://1qi4w1i4vatl" path="res://assets/heart.png" id="1_v30as"]
+[ext_resource type="Script" uid="uid://cmyq6yubl4xsi" path="res://scripts/heart.gd" id="1_ycbwg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbb06"]
+radius = 27.994204
+height = 68.02661
+
+[node name="heart" type="Area2D" unique_id=1373787835]
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+script = ExtResource("1_ycbwg")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685938316]
+texture = ExtResource("1_v30as")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=426124934]
+rotation = 1.5504494
+shape = SubResource("CapsuleShape2D_gbb06")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1060967541]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

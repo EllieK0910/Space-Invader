@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmeqfgkveg8tl"]
+
+[ext_resource type="Script" uid="uid://dtvmt08en5swf" path="res://scripts/item_dropper.gd" id="1_ktxqj"]
+[ext_resource type="PackedScene" uid="uid://ifonyk52ngb1" path="res://scenes/build.tscn" id="2_sqi2t"]
+[ext_resource type="PackedScene" uid="uid://xvshdd2ryv4f" path="res://scenes/electric.tscn" id="3_w7qjk"]
+[ext_resource type="PackedScene" uid="uid://b86msx5cg2luw" path="res://scenes/heart.tscn" id="4_yvllk"]
+
+[node name="item_dropper" type="Node2D" unique_id=21757277]
+script = ExtResource("1_ktxqj")
+build_scene = ExtResource("2_sqi2t")
+electric_scene = ExtResource("3_w7qjk")
+heart_scene = ExtResource("4_yvllk")
+
+[node name="Timer" type="Timer" parent="." unique_id=978189690]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
