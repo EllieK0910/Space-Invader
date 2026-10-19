@@ -22,6 +22,8 @@ func _process(delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size)
 
 func _on_area_entered(area: Area2D) -> void:
+	if Global.ending_game:
+		return
 	if area.collision_layer == 1:
 		print("You are hit!")
 		var hit_tween = create_tween()
@@ -30,8 +32,7 @@ func _on_area_entered(area: Area2D) -> void:
 		Global.hp -= 1
 		if Global.hp <= 0:
 			Global.hp = 0
-			Global.newGame()
-			get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+			Global.end_game()
 		print("HP: ", Global.hp)
 	else:
 		if Global.item_type == 1:

@@ -11,8 +11,7 @@ func _process(delta: float) -> void:
 
 func _on_bottom_wall_area_entered(area: Area2D) -> void:
 	print("Game Over!!!")
-	Global.newGame()
-	get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+	Global.end_game()
 
 func fix_shield(player_x: int):
 	var min_shield_life = 5
