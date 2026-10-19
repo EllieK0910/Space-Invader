@@ -1,6 +1,6 @@
 class_name Shot
 extends Area2D
-@export var speed = 100
+@export var speed = 100 + 10 * Global.current_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

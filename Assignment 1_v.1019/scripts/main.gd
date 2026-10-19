@@ -11,7 +11,8 @@ func _process(delta: float) -> void:
 
 func _on_bottom_wall_area_entered(area: Area2D) -> void:
 	print("Game Over!!!")
-	get_tree().reload_current_scene()
+	Global.newGame()
+	get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
 
 func fix_shield(player_x: int):
 	var min_shield_life = 5
@@ -59,11 +60,15 @@ func hp_get():
 	print("HP: ", Global.hp)
 	
 func _on_child_exiting_tree(node: Node) -> void:
-	if node == $Shield:
-		Global.s1 = false
-	elif node == $Shield2:
-		Global.s2 = false
-	elif node == $Shield3:
-		Global.s3 = false
-	elif node == $Shield4:
-		Global.s4 = false
+	if Global.s1 == true:
+		if node == $Shield:
+			Global.s1 = false
+	if Global.s2 == true:
+		if node == $Shield2:
+			Global.s2 = false
+	if Global.s3 == true:
+		if node == $Shield3:
+			Global.s3 = false
+	if Global.s4 == true:
+		if node == $Shield4:
+			Global.s4 = false

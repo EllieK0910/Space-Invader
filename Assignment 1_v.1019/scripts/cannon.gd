@@ -24,10 +24,14 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.collision_layer == 1:
 		print("You are hit!")
+		var hit_tween = create_tween()
+		hit_tween.tween_property($Sprite2D, "modulate", Color.RED, 0.3)
+		hit_tween.tween_property($Sprite2D, "modulate", Color.WHITE, 0.3)
 		Global.hp -= 1
 		if Global.hp <= 0:
 			Global.hp = 0
-			Global.gameOn = false
+			Global.newGame()
+			get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
 		print("HP: ", Global.hp)
 	else:
 		if Global.item_type == 1:

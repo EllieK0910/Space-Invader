@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://jq4sq06hjed4"]
+
+[ext_resource type="Script" uid="uid://bou6lwe8nw47p" path="res://scripts/ui.gd" id="1_fyqef"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kxuq"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_mti6b"]
+font_size = 64
+
+[node name="UI" type="Control" unique_id=1287530026]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fyqef")
+
+[node name="Level" type="Label" parent="." unique_id=405138421]
+layout_mode = 0
+offset_left = 21.999998
+offset_top = 0.99999994
+offset_right = 253.0
+offset_bottom = 89.0
+scale = Vector2(0.7, 0.7)
+text = "Level: 1"
+label_settings = SubResource("LabelSettings_4kxuq")
+
+[node name="HP" type="Label" parent="." unique_id=520314075]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1010.0
+offset_top = 0.99999994
+offset_right = 1168.0
+offset_bottom = 89.0
+grow_horizontal = 0
+scale = Vector2(0.7, 0.7)
+text = "HP: 3"
+label_settings = SubResource("LabelSettings_mti6b")
+
+[node name="Score" type="Label" parent="." unique_id=1258245268]
+layout_mode = 1
+offset_left = 313.0
+offset_top = 0.99999994
+offset_right = 554.0
+offset_bottom = 89.0
+scale = Vector2(0.7, 0.7)
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_4kxuq")
+
+[node name="HighScore" type="Label" parent="." unique_id=98941478]
+layout_mode = 1
+offset_left = 628.0
+offset_right = 1007.0
+offset_bottom = 88.0
+scale = Vector2(0.7, 0.7)
+text = "Highscore: 0"
+label_settings = SubResource("LabelSettings_4kxuq")

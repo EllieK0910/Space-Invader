@@ -4,10 +4,10 @@ extends Node2D
 @export var shot_scene: PackedScene
 @export var horizontal = 48 #spacing between invaders
 @export var vertical = 48
-@export var rows = 3 #amount of invaders
-@export var columns = 10
-@export var vertical_speed = 10
-@export var horizontal_speed = 10
+@export var rows = 1 + Global.current_level #amount of invaders
+@export var columns = 10 
+@export var vertical_speed = 10 * Global.current_level
+@export var horizontal_speed = 10 * Global.current_level
 
 var direction = 1
 

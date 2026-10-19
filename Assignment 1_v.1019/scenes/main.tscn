@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dlvuw5lue6rb1"]
 
-[ext_resource type="Script" uid="uid://cjlllw5kktme3" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cero3k83bmpdp" path="res://invader_spawner.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://dx4s122bn48le" path="res://laser_catcher.tscn" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://cjlllw5kktme3" path="res://scripts/main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cero3k83bmpdp" path="res://scenes/invader_spawner.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dx4s122bn48le" path="res://scenes/laser_catcher.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://st0d1fq7k8nf" path="res://scenes/shield.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cmeqfgkveg8tl" path="res://scenes/item_dropper.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ducdn2sejp3c4" path="res://scenes/cannon.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://jq4sq06hjed4" path="res://scenes/ui.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bct3m4w0hhwyb" path="res://scenes/starfield_background.tscn" id="8_tipki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbb06"]
 size = Vector2(13, 648)
@@ -68,6 +70,10 @@ position = Vector2(899, 529)
 wait_time = 5.0
 
 [node name="Cannon" parent="." unique_id=8977993 instance=ExtResource("6_tefeu")]
+
+[node name="UI" parent="." unique_id=1287530026 instance=ExtResource("7_o6xl0")]
+
+[node name="StarfieldBackground" parent="UI" unique_id=1326723989 instance=ExtResource("8_tipki")]
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="area_entered" from="LeftWall" to="InvaderSpawner" method="_on_left_wall_area_entered"]
