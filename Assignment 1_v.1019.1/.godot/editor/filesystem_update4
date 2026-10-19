@@ -1,0 +1,5 @@
+res://scripts/cannon.gd
+res://scripts/global.gd
+res://scripts/main.gd
+res://scripts/start_screen.gd
+res://scenes/main.tscn
