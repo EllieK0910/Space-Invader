@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bct3m4w0hhwyb"]
+
+[ext_resource type="Texture2D" uid="uid://465i6ocpm8g5" path="res://assets/ui/starfield.png" id="1"]
+
+[node name="StarfieldBackground" type="CanvasLayer" unique_id=1326723989]
+layer = -100
+
+[node name="Starfield" type="TextureRect" parent="." unique_id=1428532934]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 6

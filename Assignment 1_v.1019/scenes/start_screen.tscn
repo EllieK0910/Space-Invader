@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bgcb7o2643csl"]
+
+[ext_resource type="Script" uid="uid://bc27w03l2hkqe" path="res://scripts/start_screen.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cuwopkht8ssg2" path="res://assets/ui/title.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://cb01geqwisa2m" path="res://assets/ui/start_prompt.svg" id="3"]
+[ext_resource type="PackedScene" uid="uid://bct3m4w0hhwyb" path="res://scenes/starfield_background.tscn" id="4_r2jwc"]
+
+[node name="StartScreen" type="Control" unique_id=1374409210]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Title" type="TextureRect" parent="." unique_id=1048077367]
+layout_mode = 0
+anchor_left = 0.18
+anchor_top = 0.19
+anchor_right = 0.82
+anchor_bottom = 0.56
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Prompt" type="TextureRect" parent="." unique_id=971534965]
+layout_mode = 0
+anchor_left = 0.34
+anchor_top = 0.64
+anchor_right = 0.66
+anchor_bottom = 0.68
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StarfieldBackground" parent="." unique_id=1326723989 instance=ExtResource("4_r2jwc")]
