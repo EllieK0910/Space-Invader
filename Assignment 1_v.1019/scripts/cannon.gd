@@ -5,6 +5,11 @@ extends Area2D
 var screen_size
 var direction = Vector2.ZERO
 
+#var shootSfx = preload("")
+#var healSfx = preload("")
+#var shieldSfx = preload("")
+#var eletricSfx = preload("")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
