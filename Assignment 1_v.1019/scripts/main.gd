@@ -2,9 +2,11 @@ extends Node2D
 
 var cannon0: Texture2D = preload("res://assets/cannon.png")
 var cannon1: Texture2D = preload("res://assets/cannon1.png")
+var bgm:AudioStream = preload("res://assets/audio/Eric Skiff_Underclocked .mp3")
 
 func _ready() -> void:
-	pass
+	if Global.ending_game != true:
+		Global.bgmPlay(bgm)
 
 func _process(delta: float) -> void:
 	pass

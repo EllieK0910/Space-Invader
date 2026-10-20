@@ -13,6 +13,8 @@ var score = 0
 var highscore = 0
 var final_score = 0
 var ending_game = false
+var bgmPlayer = null
+var bgm
 
 func end_game() -> void:
 	if ending_game:
@@ -51,3 +53,19 @@ func newGame():
 	s2 = true
 	s3 = true
 	s4 = true
+	
+func bgmPlay(bgm: AudioStream):
+	if is_instance_valid(bgmPlayer):
+		bgmPlayer.stop()
+		bgmPlayer.queue_free()
+	bgmPlayer = AudioStreamPlayer.new()
+	add_child(bgmPlayer)
+	bgmPlayer.stream = bgm
+	bgmPlayer.play()
+		
+func sfxPlay(sfx: AudioStream):
+	var sfxPlayer = AudioStreamPlayer.new()
+	add_child(sfxPlayer)
+	sfxPlayer.stream = sfx
+	sfxPlayer.finished.connect(sfxPlayer.queue_free)
+	sfxPlayer.play()

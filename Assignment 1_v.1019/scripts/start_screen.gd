@@ -3,15 +3,17 @@ extends Control
 @onready var prompt: TextureRect = $Prompt
 var pulse: Tween
 var starting := false
+var bgm = preload("res://assets/audio/Eric Skiff _A Night Of Dizzy Spells.mp3")
 
 func _ready() -> void:
+	Global.bgmPlay(bgm)
 	prompt.resized.connect(_center_prompt_pivot)
 	_center_prompt_pivot()
 	pulse = create_tween().set_loops()
 	pulse.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	pulse.tween_property(prompt, "scale", Vector2(1.08, 1.08), 0.85)
 	pulse.tween_property(prompt, "scale", Vector2.ONE, 0.85)
-
+	
 func _center_prompt_pivot() -> void:
 	prompt.pivot_offset = prompt.size / 2.0
 
