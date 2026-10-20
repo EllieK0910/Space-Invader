@@ -9,6 +9,11 @@ var bgm:AudioStream = preload("res://assets/audio/Eric Skiff_Underclocked .mp3")
 
 func _ready() -> void:
 		Global.bgmPlay(bgm)
+<<<<<<< HEAD
+=======
+		
+	 
+>>>>>>> 8cc39b7653efb830d5f8c8ecaa97bb3a2c080049
 
 func _process(delta: float) -> void:
 	pass 
