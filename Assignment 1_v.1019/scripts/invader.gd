@@ -22,3 +22,7 @@ func _on_area_entered(area: Area2D) -> void:
 		print("All invaders dies")
 		Global.current_level += 1
 		get_tree().reload_current_scene()
+		Global.s1 = true
+		Global.s2 = true
+		Global.s3 = true
+		Global.s4 = true
