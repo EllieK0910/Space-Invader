@@ -1,5 +1,7 @@
 extends Area2D
 
+const PixelEffect = preload("res://scripts/pixel_effect.gd")
+
 var shield_life = 5
 
 var shield0: Texture2D = preload("res://assets/shield.png")
@@ -27,6 +29,7 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	print("Shield is hit!")
 	shield_life -= 1
+	PixelEffect.spawn(self, area.global_position, Color("77ffaa"))
 	$Timer.start()
 	await $Timer.timeout
 	area.queue_free()
@@ -40,5 +43,6 @@ func _on_area_entered(area: Area2D) -> void:
 		$Sprite2D.texture = shield4
 	else:
 		print("Shield is disappeared!")
+		PixelEffect.spawn(self, global_position, Color("ffaf61"))
 		queue_free()
 	

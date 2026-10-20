@@ -1,5 +1,7 @@
 extends Area2D
 
+const PixelEffect = preload("res://scripts/pixel_effect.gd")
+
 @export var speed = 200
 
 var screen_size
@@ -31,6 +33,7 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 	if area.collision_layer == 1:
 		print("You are hit!")
+		PixelEffect.spawn(self, global_position, Color("ff657a"))
 		var hit_tween = create_tween()
 		hit_tween.tween_property($Sprite2D, "modulate", Color.RED, 0.3)
 		hit_tween.tween_property($Sprite2D, "modulate", Color.WHITE, 0.3)

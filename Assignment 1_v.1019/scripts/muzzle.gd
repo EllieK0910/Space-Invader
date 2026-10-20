@@ -1,5 +1,7 @@
 extends Node2D
 
+const PixelEffect = preload("res://scripts/pixel_effect.gd")
+
 @export var laser_scene : PackedScene
 var can_shoot = true
 var las_timer
@@ -15,6 +17,7 @@ func _input(event):
 		Global.sfxPlay(shoot1Sfx)
 		laser.global_position = get_parent().global_position + Vector2(0, -20)
 		get_tree().root.get_node("Main").add_child(laser)
+		PixelEffect.spawn(self, laser.global_position, Color("ffe066") if Global.power_mode else Color("74f7dc"), "muzzle")
 		can_shoot = false
 		laser.tree_exited.connect(on_laser_destroyed)
 		if Global.power_mode == true:
@@ -24,6 +27,7 @@ func _input(event):
 			las_timer.start()
 			await las_timer.timeout
 			get_tree().root.get_node("Main").add_child(laser1)
+			PixelEffect.spawn(self, laser1.global_position, Color("ffe066"), "muzzle")
 			
 
 func on_laser_destroyed():

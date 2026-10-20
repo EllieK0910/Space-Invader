@@ -1,6 +1,8 @@
 class_name Invader
 extends Area2D
 
+const PixelEffect = preload("res://scripts/pixel_effect.gd")
+
 var getScore = 10
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	print("Hit Invaders")
+	PixelEffect.spawn(self, global_position, Color("74f7dc"))
 	# remove laser node & remove invader node***
 	Global.score += getScore
 	Global.number_of_invaders -= 1

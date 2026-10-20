@@ -1,5 +1,7 @@
 extends Node2D
 
+const PixelEffect = preload("res://scripts/pixel_effect.gd")
+
 var cannon0: Texture2D = preload("res://assets/cannon.png")
 var cannon1: Texture2D = preload("res://assets/cannon1.png")
 var bgm:AudioStream = preload("res://assets/audio/Eric Skiff_Underclocked .mp3")
@@ -11,7 +13,7 @@ func _ready() -> void:
 	 
 
 func _process(delta: float) -> void:
-	pass
+	pass 
 
 func _on_bottom_wall_area_entered(area: Area2D) -> void:
 	print("Game Over!!!")
@@ -46,20 +48,32 @@ func fix_shield(player_x: int):
 		$Shield4.shield_life += 1
 	else:
 		print("All shields are complete!")
+		PixelEffect.spawn(self, $Cannon.global_position, Color("74f7dc"))
 	if shield_no != 0:
 		print("Shields are fixed!")
+		var target = get_node("Shield" if shield_no == 1 else "Shield%d" % shield_no)
+		PixelEffect.spawn(self, target.global_position, Color("74f7dc"), "repair")
 	
 func boost_shoot():
-	Global.power_mode = true 
+	Global.power_mode = true
+	PixelEffect.spawn(self, $Cannon.global_position, Color("ffe066"))
+	if not $Cannon.has_node("PowerAura"):
+		var aura = preload("res://scripts/power_aura.gd").new()
+		aura.name = "PowerAura"
+		$Cannon.add_child(aura)
 	$Cannon.get_node("Sprite2D").texture = cannon1
 	$boost_shooting_timer.start()
 	await $boost_shooting_timer.timeout
 	$Cannon.get_node("Sprite2D").texture = cannon0
 	Global.power_mode = false
+	PixelEffect.spawn(self, $Cannon.global_position, Color("ffe066"))
 	
 func hp_get():
 	if Global.hp < 3:
 		Global.hp += 1
+		PixelEffect.spawn(self, $Cannon.global_position, Color("ff8eb3"), "heal")
+	else:
+		PixelEffect.spawn(self, $Cannon.global_position, Color("ff8eb3"), "heal")
 	print("HP: ", Global.hp)
 	
 func _on_child_exiting_tree(node: Node) -> void:
