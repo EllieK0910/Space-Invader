@@ -9,7 +9,7 @@ points = PackedVector2Array(24.157684, -12.46212, 79.97751, -12.46212, 95.77557,
 [node name="Shield" type="Area2D" unique_id=119206731]
 position = Vector2(242.00002, 136)
 scale = Vector2(0.94948345, 1.044554)
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_ohv3a")
 metadata/_edit_group_ = true
 
