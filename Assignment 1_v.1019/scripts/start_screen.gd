@@ -3,7 +3,7 @@ extends Control
 @onready var prompt: TextureRect = $Prompt
 var pulse: Tween
 var starting := false
-var bgm = preload("res://assets/audio/Eric Skiff _A Night Of Dizzy Spells.mp3")
+var bgm:AudioStream = preload("res://assets/audio/Jeremy Blake_Powerup.mp3")
 
 func _ready() -> void:
 	Global.bgmPlay(bgm)
