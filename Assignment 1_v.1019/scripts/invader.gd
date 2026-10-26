@@ -29,7 +29,4 @@ func _on_area_entered(area: Area2D) -> void:
 		Global.s2 = true
 		Global.s3 = true
 		Global.s4 = true
-<<<<<<< HEAD
 		Global.power_mode = false
-=======
->>>>>>> 8cc39b7653efb830d5f8c8ecaa97bb3a2c080049
