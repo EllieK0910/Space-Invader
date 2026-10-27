@@ -14,6 +14,7 @@ script = ExtResource("1_ycbwg")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685938316]
+texture_filter = 1
 texture = ExtResource("1_v30as")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=426124934]
